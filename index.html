@@ -1,168 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PulseBar - Native macOS System Monitor</title>
-    <meta name="description" content="A small, native macOS system monitor that keeps the numbers you care about in the menu bar.">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="images/favicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PulseBar — Native macOS System Monitor</title>
+  <meta name="description" content="PulseBar is a lightweight native macOS system monitor for CPU, memory, network, disk, battery, and thermal status — right in your menu bar.">
+  <meta name="theme-color" content="#090b10">
+  <meta property="og:title" content="PulseBar — Native macOS System Monitor">
+  <meta property="og:description" content="Keep the Mac system stats you care about visible at a glance, right in the menu bar.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://raw.githubusercontent.com/markylaredo/pulsebar/master/docs/screenshots/dashboard.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/markylaredo/pulsebar/master/Design/PulseBar-AppIcon-master.png">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="logo-section">
-                <img src="images/pulsebar-icon.png" alt="PulseBar Icon" class="logo">
-                <h1>PulseBar</h1>
-            </div>
-            <p class="tagline">A small, native macOS system monitor that keeps the numbers you care about in the menu bar.</p>
-            <nav class="nav">
-                <a href="#features">Features</a>
-                <a href="#install">Install</a>
-                <a href="#customize">Customize</a>
-                <a href="https://github.com/markylaredo/pulsebar" target="_blank">GitHub</a>
-            </nav>
-        </div>
-    </header>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="PulseBar home">
+        <img src="https://raw.githubusercontent.com/markylaredo/pulsebar/master/Design/PulseBar-AppIcon-master.png" alt="PulseBar icon">
+        <span>PulseBar</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#features">Features</a>
+        <a href="#screenshots">Screenshots</a>
+        <a href="#install">Install</a>
+        <a class="nav-github" href="https://github.com/markylaredo/pulsebar" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </nav>
+    </div>
+  </header>
 
-    <section class="hero">
-        <div class="container">
-            <img src="images/menu-bar.png" alt="PulseBar live statistics in the macOS menu bar" class="hero-image">
+  <main id="top">
+    <section class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Native macOS • Lightweight • Menu bar</div>
+          <h1>Your Mac stats,<br><span>always within sight.</span></h1>
+          <p class="hero-text">PulseBar is a small native macOS system monitor that keeps CPU, memory, network, disk, battery, and thermal status right in the menu bar.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#install">Install PulseBar</a>
+            <a class="btn btn-secondary" href="https://github.com/markylaredo/pulsebar" target="_blank" rel="noreferrer">View on GitHub</a>
+          </div>
+          <div class="hero-meta">
+            <span>macOS 14+</span>
+            <span>Swift</span>
+            <span>No analytics</span>
+            <span>No Dock icon</span>
+          </div>
         </div>
+
+        <div class="hero-product">
+          <div class="glow"></div>
+          <img class="dashboard-shot" src="https://raw.githubusercontent.com/markylaredo/pulsebar/master/docs/screenshots/dashboard.png" alt="PulseBar dashboard showing live system statistics">
+        </div>
+      </div>
     </section>
 
-    <section class="why-pulsebar">
-        <div class="container">
-            <h2>Why PulseBar?</h2>
-            <p>I wanted a system monitor that stays out of the way but still gives you useful information at a glance. PulseBar lives entirely in the menu bar, opens quickly, and uses native macOS APIs—no Dock icon cluttering your screen.</p>
-            <p class="inspiration">Inspired by <a href="https://extensions.gnome.org/extension/1460/vitals/" target="_blank">Vitals</a>, the excellent system-monitoring extension for GNOME Shell.</p>
+    <section class="menu-preview section compact-section">
+      <div class="container">
+        <div class="section-heading centered">
+          <span class="eyebrow">At a glance</span>
+          <h2>Useful numbers without opening Activity Monitor.</h2>
         </div>
+        <div class="screenshot-frame wide-frame">
+          <img src="https://raw.githubusercontent.com/markylaredo/pulsebar/master/docs/screenshots/menu-bar.png" alt="PulseBar statistics displayed in the macOS menu bar">
+        </div>
+      </div>
     </section>
 
-    <section id="features" class="features">
-        <div class="container">
-            <h2>What It Shows</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>📊 CPU & Performance</h3>
-                    <p>Live CPU usage, load averages, and per-core utilization</p>
-                </div>
-                <div class="feature-card">
-                    <h3>💾 Memory</h3>
-                    <p>Activity Monitor-style memory accounting</p>
-                </div>
-                <div class="feature-card">
-                    <h3>🌐 Network</h3>
-                    <p>Network speed, packet rates, and session totals</p>
-                </div>
-                <div class="feature-card">
-                    <h3>💿 Disk</h3>
-                    <p>Disk read/write activity and storage usage</p>
-                </div>
-                <div class="feature-card">
-                    <h3>🔋 Battery & Thermal</h3>
-                    <p>Battery level and macOS thermal state</p>
-                </div>
-                <div class="feature-card">
-                    <h3>⚙️ Customizable</h3>
-                    <p>Up to five menu-bar statistics, freely reordered in Settings</p>
-                </div>
-            </div>
+    <section id="features" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Features</span>
+          <h2>Everything important. Nothing noisy.</h2>
+          <p>PulseBar focuses on the system metrics you actually check while staying out of your way.</p>
         </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon">CPU</div>
+            <h3>CPU & Performance</h3>
+            <p>Live CPU usage, load averages, and per-core utilization.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">RAM</div>
+            <h3>Memory</h3>
+            <p>Activity Monitor-style memory accounting with live updates.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">NET</div>
+            <h3>Network</h3>
+            <p>Upload/download speed, packet rates, and session totals.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">DSK</div>
+            <h3>Disk & Storage</h3>
+            <p>Disk read/write activity plus storage usage at a glance.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">BAT</div>
+            <h3>Battery & Thermal</h3>
+            <p>Battery level and the macOS thermal state from public system APIs.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">CFG</div>
+            <h3>Fully Configurable</h3>
+            <p>Choose up to five menu-bar stats, reorder them, and tune refresh behavior.</p>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section class="dashboard-preview">
-        <div class="container">
-            <div class="preview-content">
-                <div class="preview-image">
-                    <img src="images/dashboard.png" alt="PulseBar dashboard showing live CPU, memory, and network statistics">
-                </div>
-                <div class="preview-text">
-                    <h2>Real-Time Dashboard</h2>
-                    <p>Get comprehensive system statistics at a glance with smooth, live-updating values. Choose between compact or descriptive labels.</p>
-                    <ul>
-                        <li>Smooth menu-bar values with fixed or dynamic width</li>
-                        <li>Pin option to keep the dashboard visible</li>
-                        <li>System, light, and dark appearances</li>
-                        <li>Liquid Glass controls</li>
-                    </ul>
-                </div>
-            </div>
+    <section id="screenshots" class="section surface-section">
+      <div class="container two-col">
+        <div class="screenshot-frame settings-frame">
+          <img src="https://raw.githubusercontent.com/markylaredo/pulsebar/master/docs/screenshots/settings.png" alt="PulseBar settings">
         </div>
+        <div class="content-copy">
+          <span class="eyebrow">Make it yours</span>
+          <h2>Built to fit your menu bar.</h2>
+          <p>Reorder statistics, choose which monitors run, change refresh speed, keep values at fixed positions, and customize the dashboard shortcut.</p>
+          <ul class="check-list">
+            <li>Compact or descriptive labels</li>
+            <li>Fixed or dynamic menu-bar width</li>
+            <li>System, light, and dark appearance</li>
+            <li>Pin the dashboard when you want it visible</li>
+            <li>Global shortcut: ⌥ ⌘ P</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <section id="customize" class="customize">
-        <div class="container">
-            <h2>Make It Yours</h2>
-            <div class="settings-preview">
-                <img src="images/settings.png" alt="PulseBar settings with appearance controls">
-            </div>
-            <div class="settings-text">
-                <p>Open <strong>Settings</strong> to reorder statistics, choose which monitors run, change the refresh speed, keep values at fixed positions, or customize the global dashboard shortcut.</p>
-                <p>The default shortcut is <kbd>⌥</kbd> <kbd>⌘</kbd> <kbd>P</kbd>. Press it once to open PulseBar and again to close it—even when another app is active.</p>
-            </div>
+    <section id="install" class="section install-section">
+      <div class="container install-card">
+        <div class="install-copy">
+          <span class="eyebrow">Get PulseBar</span>
+          <h2>Install in one command.</h2>
+          <p>The installer verifies the release checksum and code signature, copies PulseBar to <code>/Applications</code>, and opens it.</p>
         </div>
+        <div class="command-card" data-copy-command>
+          <div class="command-top">
+            <span>Terminal</span>
+            <button type="button" class="copy-btn">Copy</button>
+          </div>
+          <code>curl -fsSL https://raw.githubusercontent.com/markylaredo/pulsebar/master/install.sh | bash</code>
+        </div>
+        <div class="install-links">
+          <a href="https://github.com/markylaredo/pulsebar/releases/latest" target="_blank" rel="noreferrer">Latest release ↗</a>
+          <a href="https://github.com/markylaredo/pulsebar/blob/master/docs/INSTALLATION.md" target="_blank" rel="noreferrer">Installation guide ↗</a>
+          <a href="https://github.com/markylaredo/pulsebar/issues" target="_blank" rel="noreferrer">Report an issue ↗</a>
+        </div>
+      </div>
     </section>
 
-    <section id="install" class="install">
-        <div class="container">
-            <h2>Installation</h2>
-            
-            <div class="install-method">
-                <h3>Quick Install</h3>
-                <p>Install the latest release with one command:</p>
-                <pre><code>curl -fsSL https://raw.githubusercontent.com/markylaredo/pulsebar/master/install.sh | bash</code></pre>
-                <p class="install-note">The installer verifies the release checksum and code signature, copies PulseBar to <code>/Applications</code>, and opens it.</p>
-            </div>
-
-            <div class="install-method">
-                <h3>Build from Source</h3>
-                <p>PulseBar requires macOS 14 or later and Xcode 16 or later.</p>
-                <pre><code>git clone https://github.com/markylaredo/pulsebar.git
-cd pulsebar
-open PulseBar.xcodeproj</code></pre>
-                <p>In Xcode, select the <strong>PulseBar</strong> scheme, choose your Mac, and press <strong>Run</strong>.</p>
-            </div>
-
-            <div class="install-method">
-                <h3>Uninstall</h3>
-                <pre><code>curl -fsSL https://raw.githubusercontent.com/markylaredo/pulsebar/master/uninstall.sh | bash</code></pre>
-            </div>
-
-            <p class="install-link"><a href="https://github.com/markylaredo/pulsebar/blob/master/docs/INSTALLATION.md" target="_blank">View full installation guide →</a></p>
+    <section class="section support-section">
+      <div class="container support-card">
+        <div>
+          <span class="eyebrow">Support PulseBar</span>
+          <h2>Like the project?</h2>
+          <p>A GitHub star helps other Mac users discover PulseBar. Bug reports and focused improvements are welcome too.</p>
         </div>
+        <div class="hero-actions support-actions">
+          <a class="btn btn-primary" href="https://github.com/markylaredo/pulsebar" target="_blank" rel="noreferrer">Star on GitHub</a>
+          <a class="btn btn-secondary" href="https://paypal.me/markanthony495" target="_blank" rel="noreferrer">Support development</a>
+        </div>
+      </div>
     </section>
+  </main>
 
-    <section class="requirements">
-        <div class="container">
-            <h3>Requirements</h3>
-            <div class="badges">
-                <span class="badge">macOS 14+</span>
-                <span class="badge">Swift 5</span>
-                <span class="badge">Xcode 16+</span>
-            </div>
+  <footer class="footer">
+    <div class="container footer-wrap">
+      <div class="footer-brand">
+        <img src="https://raw.githubusercontent.com/markylaredo/pulsebar/master/Design/PulseBar-AppIcon-master.png" alt="">
+        <div>
+          <strong>PulseBar</strong>
+          <p>Native macOS system monitoring from the menu bar.</p>
         </div>
-    </section>
+      </div>
+      <div class="footer-meta">
+        <a href="https://github.com/markylaredo/pulsebar/blob/master/LICENSE" target="_blank" rel="noreferrer">PolyForm Noncommercial 1.0.0</a>
+        <span>© 2026 Mark Laredo</span>
+      </div>
+    </div>
+  </footer>
 
-    <section class="support">
-        <div class="container">
-            <h2>Support the Project</h2>
-            <p>If PulseBar is useful to you, a ⭐ on <a href="https://github.com/markylaredo/pulsebar" target="_blank">GitHub</a> helps other Mac users find it.</p>
-            <p>Bug reports and focused improvements are welcome through <a href="https://github.com/markylaredo/pulsebar/issues" target="_blank">GitHub Issues</a>.</p>
-            <div class="support-buttons">
-                <a href="https://github.com/markylaredo/pulsebar" class="btn btn-primary">View on GitHub</a>
-                <a href="https://paypal.me/markanthony495" class="btn btn-secondary">Support via PayPal</a>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <p>PulseBar is source-available under the <a href="https://github.com/markylaredo/pulsebar/blob/master/LICENSE" target="_blank">PolyForm Noncommercial License 1.0.0</a></p>
-            <p>Personal and other non-commercial use is welcome. © 2024 Mark Laredo</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
