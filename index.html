@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PulseBar — Native macOS System Monitor</title>
-  <meta name="description" content="PulseBar is a lightweight native macOS system monitor for CPU, memory, network, disk, battery, and thermal status — right in your menu bar.">
+  <meta name="description" content="PulseBar is a lightweight native macOS system monitor with menu-bar stats, performance history, process details, network inspection, and storage monitoring.">
   <meta name="theme-color" content="#090b10">
   <meta property="og:title" content="PulseBar — Native macOS System Monitor">
-  <meta property="og:description" content="Keep the Mac system stats you care about visible at a glance, right in the menu bar.">
+  <meta property="og:description" content="Monitor your Mac from the menu bar, then dive deeper into performance, processes, network connections, and storage.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://raw.githubusercontent.com/markylaredo/pulsebar/master/docs/screenshots/dashboard.png">
+  <meta property="og:image" content="https://raw.githubusercontent.com/markylaredo/pulsebar/master/docs/screenshots/system-overview.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/markylaredo/pulsebar/master/Design/PulseBar-AppIcon-master.png">
   <link rel="stylesheet" href="styles.css">
@@ -23,7 +23,8 @@
       </a>
       <nav class="nav" aria-label="Primary navigation">
         <a href="#features">Features</a>
-        <a href="#screenshots">Screenshots</a>
+        <a href="#explorer">System Explorer</a>
+        <a href="#screenshots">Customize</a>
         <a href="#install">Install</a>
         <a class="nav-github" href="https://github.com/markylaredo/pulsebar" target="_blank" rel="noreferrer">GitHub ↗</a>
       </nav>
@@ -36,10 +37,10 @@
         <div class="hero-copy">
           <div class="eyebrow">Native macOS • Lightweight • Menu bar</div>
           <h1>Your Mac stats,<br><span>always within sight.</span></h1>
-          <p class="hero-text">PulseBar is a small native macOS system monitor that keeps CPU, memory, network, disk, battery, and thermal status right in the menu bar.</p>
+          <p class="hero-text">PulseBar keeps the essential numbers in your menu bar, then gives you a deeper view of performance, processes, network connections, and storage when you need it.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#install">Install PulseBar</a>
-            <a class="btn btn-secondary" href="https://github.com/markylaredo/pulsebar" target="_blank" rel="noreferrer">View on GitHub</a>
+            <a class="btn btn-secondary" href="https://github.com/markylaredo/pulsebar/releases/latest" target="_blank" rel="noreferrer">Latest Release</a>
           </div>
           <div class="hero-meta">
             <span>macOS 14+</span>
@@ -72,46 +73,59 @@
       <div class="container">
         <div class="section-heading">
           <span class="eyebrow">Features</span>
-          <h2>Everything important. Nothing noisy.</h2>
-          <p>PulseBar focuses on the system metrics you actually check while staying out of your way.</p>
+          <h2>Quick monitoring with deeper tools built in.</h2>
+          <p>PulseBar stays lightweight in the menu bar while giving you detailed system visibility when something deserves a closer look.</p>
         </div>
 
         <div class="feature-grid">
-          <article class="feature-card">
-            <div class="feature-icon">CPU</div>
-            <h3>CPU & Performance</h3>
-            <p>Live CPU usage, load averages, and per-core utilization.</p>
+          <article class="feature-card"><div class="feature-icon">CPU</div><h3>CPU & Performance</h3><p>Live CPU usage, load averages, per-core utilization, and performance history.</p></article>
+          <article class="feature-card"><div class="feature-icon">RAM</div><h3>Memory</h3><p>Activity Monitor-style memory accounting with live resource history.</p></article>
+          <article class="feature-card"><div class="feature-icon">PROC</div><h3>Process Explorer</h3><p>Sort running processes and inspect per-process resource details.</p></article>
+          <article class="feature-card"><div class="feature-icon">NET</div><h3>Network Inspector</h3><p>Search TCP and UDP connections and trace sockets back to processes.</p></article>
+          <article class="feature-card"><div class="feature-icon">DSK</div><h3>Disk & Storage</h3><p>Disk read/write activity, mounted volumes, capacity, and storage usage.</p></article>
+          <article class="feature-card"><div class="feature-icon">BAT</div><h3>Battery & Thermal</h3><p>Battery level and macOS thermal state using public system APIs.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="explorer" class="section surface-section">
+      <div class="container">
+        <div class="section-heading centered explorer-heading">
+          <span class="eyebrow">System Explorer</span>
+          <h2>Explore what your Mac is doing right now.</h2>
+          <p>Open the deeper system view for live performance, process activity, connections, and storage without leaving PulseBar.</p>
+        </div>
+
+        <div class="screenshot-frame explorer-demo">
+          <img src="https://raw.githubusercontent.com/markylaredo/pulsebar/master/docs/screenshots/system-explorer.gif" alt="PulseBar System Explorer cycling through Overview, Performance, Network, and Storage">
+        </div>
+
+        <div class="explorer-grid">
+          <article class="explorer-card">
+            <div class="screenshot-frame"><img src="https://raw.githubusercontent.com/markylaredo/pulsebar/master/docs/screenshots/system-overview.png" alt="PulseBar System Overview"></div>
+            <h3>System Overview</h3>
+            <p>CPU, memory, network, disk, thermal state, and uptime in one view.</p>
           </article>
-          <article class="feature-card">
-            <div class="feature-icon">RAM</div>
-            <h3>Memory</h3>
-            <p>Activity Monitor-style memory accounting with live updates.</p>
+          <article class="explorer-card">
+            <div class="screenshot-frame"><img src="https://raw.githubusercontent.com/markylaredo/pulsebar/master/docs/screenshots/performance.png" alt="PulseBar Performance view"></div>
+            <h3>Performance</h3>
+            <p>Live history and detailed system resource statistics.</p>
           </article>
-          <article class="feature-card">
-            <div class="feature-icon">NET</div>
-            <h3>Network</h3>
-            <p>Upload/download speed, packet rates, and session totals.</p>
+          <article class="explorer-card">
+            <div class="screenshot-frame"><img src="https://raw.githubusercontent.com/markylaredo/pulsebar/master/docs/screenshots/network-inspector.png" alt="PulseBar Network Inspector"></div>
+            <h3>Network Inspector</h3>
+            <p>Filter TCP and UDP sockets and identify process ownership.</p>
           </article>
-          <article class="feature-card">
-            <div class="feature-icon">DSK</div>
-            <h3>Disk & Storage</h3>
-            <p>Disk read/write activity plus storage usage at a glance.</p>
-          </article>
-          <article class="feature-card">
-            <div class="feature-icon">BAT</div>
-            <h3>Battery & Thermal</h3>
-            <p>Battery level and the macOS thermal state from public system APIs.</p>
-          </article>
-          <article class="feature-card">
-            <div class="feature-icon">CFG</div>
-            <h3>Fully Configurable</h3>
-            <p>Choose up to five menu-bar stats, reorder them, and tune refresh behavior.</p>
+          <article class="explorer-card">
+            <div class="screenshot-frame"><img src="https://raw.githubusercontent.com/markylaredo/pulsebar/master/docs/screenshots/storage.png" alt="PulseBar Storage view"></div>
+            <h3>Storage</h3>
+            <p>See volume capacity and disk activity in a focused view.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="screenshots" class="section surface-section">
+    <section id="screenshots" class="section">
       <div class="container two-col">
         <div class="screenshot-frame settings-frame">
           <img src="https://raw.githubusercontent.com/markylaredo/pulsebar/master/docs/screenshots/settings.png" alt="PulseBar settings">
@@ -121,6 +135,7 @@
           <h2>Built to fit your menu bar.</h2>
           <p>Reorder statistics, choose which monitors run, change refresh speed, keep values at fixed positions, and customize the dashboard shortcut.</p>
           <ul class="check-list">
+            <li>Up to five menu-bar statistics</li>
             <li>Compact or descriptive labels</li>
             <li>Fixed or dynamic menu-bar width</li>
             <li>System, light, and dark appearance</li>
@@ -139,10 +154,7 @@
           <p>The installer verifies the release checksum and code signature, copies PulseBar to <code>/Applications</code>, and opens it.</p>
         </div>
         <div class="command-card" data-copy-command>
-          <div class="command-top">
-            <span>Terminal</span>
-            <button type="button" class="copy-btn">Copy</button>
-          </div>
+          <div class="command-top"><span>Terminal</span><button type="button" class="copy-btn">Copy</button></div>
           <code>curl -fsSL https://raw.githubusercontent.com/markylaredo/pulsebar/master/install.sh | bash</code>
         </div>
         <div class="install-links">
@@ -162,7 +174,8 @@
         </div>
         <div class="hero-actions support-actions">
           <a class="btn btn-primary" href="https://github.com/markylaredo/pulsebar" target="_blank" rel="noreferrer">Star on GitHub</a>
-          <a class="btn btn-secondary" href="https://paypal.me/markanthony495" target="_blank" rel="noreferrer">Support development</a>
+          <a class="btn btn-secondary" href="https://buymeacoffee.com/markanthontf" target="_blank" rel="noreferrer">Buy me a coffee</a>
+          <a class="btn btn-secondary" href="https://paypal.me/markanthony495" target="_blank" rel="noreferrer">PayPal</a>
         </div>
       </div>
     </section>
@@ -172,10 +185,7 @@
     <div class="container footer-wrap">
       <div class="footer-brand">
         <img src="https://raw.githubusercontent.com/markylaredo/pulsebar/master/Design/PulseBar-AppIcon-master.png" alt="">
-        <div>
-          <strong>PulseBar</strong>
-          <p>Native macOS system monitoring from the menu bar.</p>
-        </div>
+        <div><strong>PulseBar</strong><p>Native macOS system monitoring from the menu bar.</p></div>
       </div>
       <div class="footer-meta">
         <a href="https://github.com/markylaredo/pulsebar/blob/master/LICENSE" target="_blank" rel="noreferrer">PolyForm Noncommercial 1.0.0</a>
